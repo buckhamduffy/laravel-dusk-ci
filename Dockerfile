@@ -149,19 +149,6 @@ RUN apt-get update && apt-get install -yq --fix-missing git
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-#RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-#RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-#RUN apt-get update && apt-get install -yq --fix-missing yarn
-RUN npm install -g yarn
-RUN yarn global add bower
-RUN wget https://phar.phpunit.de/phpunit.phar
-RUN chmod +x phpunit.phar
-RUN mv phpunit.phar /usr/local/bin/phpunit
-
-RUN npm install -g node-gyp
-RUN npm install --unsafe-perm -g node-sass
-RUN npm install -g gulp
-
 RUN apt-get update && apt-get install -yq --fix-missing supervisor
 
 ADD configs/supervisord.conf /etc/supervisor/supervisord.conf
