@@ -28,4 +28,4 @@ jobs:
         with:
           push: true
           context: ./
-          tags: buckhamduffy/laravel-dusk-ci:${GITHUB_REF##*/}
+          tags: buckhamduffy/laravel-dusk-ci:php-8.1
